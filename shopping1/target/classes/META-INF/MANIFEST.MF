@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: 16603
+Build-Jdk: 11.0.2
+Implementation-Title: shopping
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.project
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/shopping
+Created-By: Maven Integration for Eclipse
+

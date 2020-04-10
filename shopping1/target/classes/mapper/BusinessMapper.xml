@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.shopping.mapper.BusinessMapper">
+
+	<select id="businessLogin" resultType="com.project.shopping.domain.Business">
+		select * from pt_business
+		<where>
+			<if test="username != null and username != ''">
+				username = #{username}
+			</if>
+			<if test="password != null and password != ''">
+				and password = #{password}
+			</if>
+		</where>
+	</select>
+
+	<update id="updateBusiness">
+		update pt_business
+		<set>
+			<if test="username != null and username != ''">
+				username = #{username},
+			</if>
+			<if test="password != null and password != ''">
+				password = #{password},
+			</if>
+			<if test="name != null and name != ''">
+				name = #{name},
+			</if>
+			<if test="phone != null and phone != ''">
+				phone = #{phone},
+			</if>
+			<if test="address != null and address != ''">
+				address = #{address},
+			</if>
+			<if test="avaliable != null and avaliable != ''">
+				avaliable = #{avaliable},
+			</if>
+			<if test="file != null and file != ''">
+				file = #{file}
+			</if>
+		</set>
+		<where>
+			<if test="businessid != 0">
+				businessid = #{businessid}
+			</if>
+		</where>
+	</update>
+
+</mapper>

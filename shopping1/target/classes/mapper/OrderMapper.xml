@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.shopping.mapper.OrderMapper">
+
+	<select id="findAllOrder" resultType="com.project.shopping.domain.Order">
+		select * from pt_order
+		<where>
+			<if test="orderstatus != null and orderstatus != ''">
+				 orderstatus = #{orderstatus}
+			</if>
+			<if test="userid != 0">
+				 and userid = #{userid}
+			</if>
+			<if test="businessid != 0">
+				 and businessid = #{businessid}
+			</if>
+		</where>
+	</select>
+	
+	<update id="updateOrder">
+		update pt_order
+		<set>
+			<if test="orderstatus != null and orderstatus != ''">
+				 orderstatus = #{orderstatus}
+			</if>
+		</set>
+		<where>
+			<if test="id != 0">
+				id = #{id}
+			</if>
+		</where>
+	</update>
+	
+	<update id="updataOrderNum">
+		update pt_order
+		<set>
+			<if test="num != 0">
+				 num = num + #{num}
+			</if>
+		</set>
+		<where>
+			<if test="id != 0">
+				id = #{id}
+			</if>
+		</where>
+	</update>
+	
+	<insert id="addOrder">
+		insert into pt_order(userid,shopid,businessid,num.price,orderstatus,createtime)
+		values(#{userid},#{shopid},#{businessid},#{num},#{price},#{orderstatus},NOW())
+	</insert>
+	
+	<select id="checkOrder" resultType="com.project.shopping.domain.Order">
+		select * from pt_order
+		<where>
+			<if test="userid != 0">
+				 userid = #{userid}
+			</if>
+			<if test="shopid != 0">
+				 and shopid = #{shopid}
+			</if>
+			<if test="orderstatus != null and orderstatus != ''">
+				 and orderstatus = #{orderstatus}
+			</if>
+		</where>
+	</select>
+	
+	<delete id="deleteOrder">
+		delete from pt_order
+		<where>
+			<if test="id != 0">
+				id = #{id}
+			</if>
+		</where>
+	</delete>
+
+</mapper>
