@@ -24,30 +24,32 @@
     <col width="200">
     <col>
   </colgroup>
-  <thead>
-    <tr>
-      <th>技术框架</th>
-      <th>版本</th>
-      <th>作者</th>
-    </tr> 
-  </thead>
-  <tbody>
-    <tr>
-      <td>SpringBooot</td>
-      <td>2.0.4</td>
-      <td>author</td>
-    </tr>
-    <tr>
-      <td>MySQL</td>
-      <td>5.7</td>
-      <td>author</td>
-    </tr>
-    <tr>
-      <td>MyBatis</td>
-      <td>1.2.0</td>
-      <td>author</td>
-    </tr>
-  </tbody>
+   <th>欢迎使用农副产品交易平台</th>
+   <p class="textimg"><img src="images/juzi.jpg"></p>
+<!--   <thead> -->
+<!--     <tr> -->
+<!--       <th>技术框架</th> -->
+<!--       <th>版本</th> -->
+<!--       <th>作者</th> -->
+<!--     </tr>  -->
+<!--   </thead> -->
+<!--   <tbody> -->
+<!--     <tr> -->
+<!--       <td>SpringBooot</td> -->
+<!--       <td>2.0.4</td> -->
+<!--       <td>author</td> -->
+<!--     </tr> -->
+<!--     <tr> -->
+<!--       <td>MySQL</td> -->
+<!--       <td>5.7</td> -->
+<!--       <td>author</td> -->
+<!--     </tr> -->
+<!--     <tr> -->
+<!--       <td>MyBatis</td> -->
+<!--       <td>1.2.0</td> -->
+<!--       <td>author</td> -->
+<!--     </tr> -->
+<!--   </tbody> -->
 </table>
       
 </body>

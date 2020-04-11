@@ -18,14 +18,13 @@ public class User{
 	private String phone;
 	private String address;
 	private String type;
+	private String file;
 	
 	
 	
 	
-	public User() {
-		super();
-	}
-	public User(int userid, String username, String password, String name, String phone, String address, String type) {
+	public User(int userid, String username, String password, String name, String phone, String address, String type,
+			String file) {
 		super();
 		this.userid = userid;
 		this.username = username;
@@ -34,6 +33,16 @@ public class User{
 		this.phone = phone;
 		this.address = address;
 		this.type = type;
+		this.file = file;
+	}
+	public String getFile() {
+		return file;
+	}
+	public void setFile(String file) {
+		this.file = file;
+	}
+	public User() {
+		super();
 	}
 	public int getUserid() {
 		return userid;
@@ -79,7 +88,8 @@ public class User{
 	}
 	@Override
 	public String toString() {
-		return userid + ", " + username + ", " + password + ", " + name + ", " + phone + ", " + address + ", " + type;
+		return "User [userid=" + userid + ", username=" + username + ", password=" + password + ", name=" + name
+				+ ", phone=" + phone + ", address=" + address + ", type=" + type + ", file=" + file + "]";
 	}
 	
 	

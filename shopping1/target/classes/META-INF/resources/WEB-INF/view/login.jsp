@@ -99,6 +99,7 @@
 			      <select name="type" class="layui-input">
 			      	<option value="1">用户</option>
 			      	<option value="2">商家</option>
+			        <option value="3">管理员</option>
 			      </select>
 			    </div>
 			    <!-- <div class="layui-form-mid layui-word-aux">辅助文字</div> -->
@@ -115,7 +116,7 @@
 			      <button class="layui-btn" lay-submit lay-filter="formDemo">登陆</button>	     
 			    </div>
 			  </div>
-			   <!-- <a href="" class="font-set">忘记密码?</a>  <a href="" class="font-set">立即注册</a> -->
+    <a href="" class="font-set">忘记密码?</a>  <a href="/goZhuce" class="font-set">立即注册</a>
 			</div>
 		</form>
 		<script type="text/javascript" src="../layui/layui.js"></script>

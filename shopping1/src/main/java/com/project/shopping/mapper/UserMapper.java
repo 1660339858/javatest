@@ -20,4 +20,7 @@ public interface UserMapper {
 	
 	//修改用户
 	int updateUser(User user);
+
+	int userzhuce(User user);
+
 }

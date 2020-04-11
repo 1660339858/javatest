@@ -3,6 +3,9 @@
  */
 package com.project.shopping.service.impl;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,6 +37,32 @@ public class UserServiceImpl implements UserService {
 	public int updateUser(User user) {
 		// TODO Auto-generated method stub
 		return userMapper.updateUser(user);
+	}
+
+	@Override
+	public int userzhuce(User user) {
+		// TODO Auto-generated method stub
+		return userMapper.userzhuce(user);
+		
+	}
+
+	@Override
+	public  Map selectbyUserName(String username) {
+		
+		Map map =new HashMap();
+		User user = new User();
+		user.setUsername(username);
+		User dbuser=	userMapper.userLogin(user);
+		if(null!=dbuser) {
+			map.put("code","1");
+			map.put("msg","用户名已存在");
+		}else {
+			map.put("code","0");
+			map.put("msg","交易成功");
+		}
+		return map;
+		
+		
 	}
 
 }

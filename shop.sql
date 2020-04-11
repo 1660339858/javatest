@@ -1,28 +1,26 @@
 /*
- Navicat Premium Data Transfer
+Navicat MySQL Data Transfer
 
- Source Server         : testyuanchen
- Source Server Type    : MySQL
- Source Server Version : 50621
- Source Host           : 106.12.85.53:3306
- Source Schema         : shop
+Source Server         : localhost_3306
+Source Server Version : 80019
+Source Host           : localhost:3306
+Source Database       : shop
 
- Target Server Type    : MySQL
- Target Server Version : 50621
- File Encoding         : 65001
+Target Server Type    : MYSQL
+Target Server Version : 80019
+File Encoding         : 65001
 
- Date: 09/04/2020 21:10:19
+Date: 2020-04-11 15:24:39
 */
 
-SET NAMES utf8mb4;
-SET FOREIGN_KEY_CHECKS = 0;
+SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
 -- Table structure for pt_business
 -- ----------------------------
 DROP TABLE IF EXISTS `pt_business`;
-CREATE TABLE `pt_business`  (
-  `businessid` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `pt_business` (
+  `businessid` int NOT NULL AUTO_INCREMENT,
   `username` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
@@ -31,75 +29,72 @@ CREATE TABLE `pt_business`  (
   `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `avaliable` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   PRIMARY KEY (`businessid`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 -- Records of pt_business
 -- ----------------------------
-INSERT INTO `pt_business` VALUES (1, 'ls', 'ls', '李四', '2020-04-09/F2B474B74F9A47BCA056F92D743CDCF5.jpg_temp', '12342321322', '河北', '2');
+INSERT INTO `pt_business` VALUES ('1', 'ls', 'ls', '生鲜大佬', 'shuiguo.jpg', '12342321322', '河南', '2');
+INSERT INTO `pt_business` VALUES ('2', 'hu', 'hu', null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for pt_order
 -- ----------------------------
 DROP TABLE IF EXISTS `pt_order`;
-CREATE TABLE `pt_order`  (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `userid` int(11) DEFAULT NULL,
-  `shopid` int(11) DEFAULT NULL,
-  `businessid` int(11) DEFAULT NULL,
-  `num` int(11) DEFAULT NULL,
-  `price` decimal(10, 2) DEFAULT NULL,
+CREATE TABLE `pt_order` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `userid` int DEFAULT NULL,
+  `shopid` int DEFAULT NULL,
+  `businessid` int DEFAULT NULL,
+  `num` int DEFAULT NULL,
+  `price` decimal(10,2) DEFAULT NULL,
   `orderstatus` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `createtime` datetime(0) DEFAULT NULL,
+  `createtime` datetime DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 -- Records of pt_order
 -- ----------------------------
-INSERT INTO `pt_order` VALUES (1, 1, 3, 1, 1, 12.00, '1', '2020-04-09 16:01:08');
-INSERT INTO `pt_order` VALUES (2, 1, 4, 1, 1, 12.00, '2', '2020-04-09 16:21:13');
+INSERT INTO `pt_order` VALUES ('1', '1', '3', '1', '1', '12.00', '1', '2020-04-09 16:01:08');
+INSERT INTO `pt_order` VALUES ('2', '1', '4', '1', '1', '12.00', '2', '2020-04-09 16:21:13');
 
 -- ----------------------------
 -- Table structure for pt_shop
 -- ----------------------------
 DROP TABLE IF EXISTS `pt_shop`;
-CREATE TABLE `pt_shop`  (
-  `shopid` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `pt_shop` (
+  `shopid` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `file` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `price` decimal(10, 2) DEFAULT NULL,
+  `price` decimal(10,2) DEFAULT NULL,
   `place` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `businessid` int(11) DEFAULT NULL,
-  `num` int(11) DEFAULT NULL,
+  `businessid` int DEFAULT NULL,
+  `num` int DEFAULT NULL,
   PRIMARY KEY (`shopid`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 -- Records of pt_shop
 -- ----------------------------
-INSERT INTO `pt_shop` VALUES (3, '大码女装200斤胖mm秋季新款简约', '2020-04-09/224FB4D5787D4D28B038C67B8ABE14D1.jpg_temp', 12.00, '北京', 1, 100);
-INSERT INTO `pt_shop` VALUES (4, '花西子雕花口红/浮雕唇膏女半哑光', '2020-04-09/DA0A6B0C880046C5BDA9C0A64D8085C8.jpg_temp', 15.00, '河北', 1, 223);
-INSERT INTO `pt_shop` VALUES (5, '大码女装200斤胖mm秋季新款简约', '2020-04-09/224FB4D5787D4D28B038C67B8ABE14D1.jpg_temp', 12.00, '北京', 1, 100);
-INSERT INTO `pt_shop` VALUES (6, '花西子雕花口红/浮雕唇膏女半哑光', '2020-04-09/DA0A6B0C880046C5BDA9C0A64D8085C8.jpg_temp', 15.00, '河北', 1, 223);
-INSERT INTO `pt_shop` VALUES (7, '大码女装200斤胖mm秋季新款简约', '2020-04-09/224FB4D5787D4D28B038C67B8ABE14D1.jpg_temp', 12.00, '北京', 1, 100);
-INSERT INTO `pt_shop` VALUES (8, '花西子雕花口红/浮雕唇膏女半哑光', '2020-04-09/DA0A6B0C880046C5BDA9C0A64D8085C8.jpg_temp', 15.00, '河北', 1, 223);
-INSERT INTO `pt_shop` VALUES (9, '大码女装200斤胖mm秋季新款简约', '2020-04-09/224FB4D5787D4D28B038C67B8ABE14D1.jpg_temp', 12.00, '北京', 1, 100);
-INSERT INTO `pt_shop` VALUES (10, '花西子雕花口红/浮雕唇膏女半哑光', '2020-04-09/DA0A6B0C880046C5BDA9C0A64D8085C8.jpg_temp', 15.00, '河北', 1, 223);
-INSERT INTO `pt_shop` VALUES (11, '大码女装200斤胖mm秋季新款简约', '2020-04-09/224FB4D5787D4D28B038C67B8ABE14D1.jpg_temp', 12.00, '北京', 1, 100);
-INSERT INTO `pt_shop` VALUES (12, '花西子雕花口红/浮雕唇膏女半哑光', '2020-04-09/DA0A6B0C880046C5BDA9C0A64D8085C8.jpg_temp', 15.00, '河北', 1, 223);
-INSERT INTO `pt_shop` VALUES (13, '大码女装200斤胖mm秋季新款简约', '2020-04-09/224FB4D5787D4D28B038C67B8ABE14D1.jpg_temp', 12.00, '北京', 1, 100);
-INSERT INTO `pt_shop` VALUES (14, '大码女装200斤胖mm秋季新款简约', '2020-04-09/224FB4D5787D4D28B038C67B8ABE14D1.jpg_temp', 12.00, '北京', 1, 100);
-INSERT INTO `pt_shop` VALUES (15, '大码女装200斤胖mm秋季新款简约', '2020-04-09/224FB4D5787D4D28B038C67B8ABE14D1.jpg_temp', 12.00, '北京', 1, 100);
-INSERT INTO `pt_shop` VALUES (16, '大码女装200斤胖mm秋季新款简约', '2020-04-09/224FB4D5787D4D28B038C67B8ABE14D1.jpg_temp', 12.00, '北京', 1, 100);
+INSERT INTO `pt_shop` VALUES ('3', '精品橘子', 'juzi.jpg', '13.00', '北京', '1', '132');
+INSERT INTO `pt_shop` VALUES ('4', '无公害韭黄', 'jiuhuang.jpg', '15.00', '河北', '1', '223');
+INSERT INTO `pt_shop` VALUES ('5', '冬虫夏草', 'dongchong.jpg', '12.00', '北京', '1', '100');
+INSERT INTO `pt_shop` VALUES ('6', '精品番茄', 'fanqie.jpg', '15.00', '河北', '1', '223');
+INSERT INTO `pt_shop` VALUES ('7', '西湖龙井', 'longjing.jpg', '12.00', '北京', '1', '100');
+INSERT INTO `pt_shop` VALUES ('8', '普尔红茶', 'puer.jpg', '15.00', '河北', '1', '223');
+INSERT INTO `pt_shop` VALUES ('9', '精品苹果', 'pingguo.jpg', '12.00', '北京', '1', '100');
+INSERT INTO `pt_shop` VALUES ('10', '天麻', 'tianma.jpg', '15.00', '河北', '1', '223');
+INSERT INTO `pt_shop` VALUES ('14', '新鲜青菜', 'qingcai.jpg', '12.00', '北京', '1', '100');
+INSERT INTO `pt_shop` VALUES ('15', '精选葡萄', 'putao.jpg', '12.00', '北京', '1', '100');
 
 -- ----------------------------
 -- Table structure for pt_user
 -- ----------------------------
 DROP TABLE IF EXISTS `pt_user`;
-CREATE TABLE `pt_user`  (
-  `userid` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+CREATE TABLE `pt_user` (
+  `userid` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `phone` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
@@ -107,11 +102,15 @@ CREATE TABLE `pt_user`  (
   `type` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `file` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   PRIMARY KEY (`userid`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 -- Records of pt_user
 -- ----------------------------
-INSERT INTO `pt_user` VALUES (1, 'zs', 'zs', '张三', '12342321322', '上海', '1', NULL);
-
-SET FOREIGN_KEY_CHECKS = 1;
+INSERT INTO `pt_user` VALUES ('1', 'zs', 'zs', '张三', '12342321325', '上海', '1', null);
+INSERT INTO `pt_user` VALUES ('6', 'LS', 'LS', '张三', '12342321325', '上海', '1', null);
+INSERT INTO `pt_user` VALUES ('9', '6', 'qw', 'qw', 'zsd', '12121212', '1', null);
+INSERT INTO `pt_user` VALUES ('10', 'ds', 'ds', null, null, null, '1', null);
+INSERT INTO `pt_user` VALUES ('11', 'mei', 'mei', null, null, null, '1', null);
+INSERT INTO `pt_user` VALUES ('12', 'admin', 'admin', 'admin', null, null, '3', null);
+INSERT INTO `pt_user` VALUES ('13', '111', '11', null, null, null, '1', null);

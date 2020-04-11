@@ -17,5 +17,7 @@ public interface BusinessMapper {
 	
 	//修改商家信息
 	int updateBusiness(Business business);
+
+	int Busineszhuce(Business business);
 	
 }

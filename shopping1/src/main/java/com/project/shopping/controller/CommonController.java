@@ -29,8 +29,23 @@ public class CommonController {
 	ShopService shopService;
 	
 	@Autowired
+	//管理员
+	@RequestMapping("/goBusinessList")
+	public String goBusinessList() {
+		return "/manager/business";
+	}
+	
+	@RequestMapping("/goUserList")
+	public String goUserList() {
+		return "/manager/user";
+	}
+	
 	
 	//用户
+	@RequestMapping("goZhuce")
+	public String goZhuce() {
+		return "zhuce";
+	}
 	
 	@RequestMapping("/")
 	public String goLoginCView() {

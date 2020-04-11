@@ -21,7 +21,7 @@
 	<div class="layui-form-item">
 		<div class="layui-inline">
 			<label class="layui-form-label">状态</label>
-			<div class="layui-input-inline" style="width: 100px;">
+			<div class="layui-input-inline" style="width: 500px;">
 				<select name="orderstatus" id="pId">
 					<option value="">请选择</option>
 					<option value="1">未付款</option>
@@ -37,7 +37,10 @@
 	<!-- 表格容器 -->
 	<table id="demo" lay-filter="test"></table>
 
-
+	<script type="text/html" id="barDemo2">
+  		<a class="layui-btn layui-btn-xs" lay-event="detail">查看与编辑</a>
+  		<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+	</script>
 
 	<!-- 脚本代码部分 -->
 	<script>

@@ -83,7 +83,7 @@
 	<div class="top">
 		<c:forEach items="${s}" var="s">
 			<div class="viewShop">
-				<img class="img" width="300px" height="300px" src="../file/showImageByPath?path=${s.file}"/><br>
+				<img class="img" width="300px" height="300px" src="../layui/images/goods/${s.file}"/><br>
 				<strong class="price">¥${s.price}</strong><br>
 				<span class="name">${s.name}</span><br>
 				<span class="place">${s.place}</span><br>

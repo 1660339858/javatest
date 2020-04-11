@@ -119,7 +119,7 @@ public class BusinessController {
 	public Object addShop(Shop shop,HttpServletRequest request) {
 		
 		System.out.println(shop);
-		
+		// 从缓存拿到商家信息
 		Business business = (Business) request.getSession().getAttribute("business");
 		shop.setBusinessid(business.getBusinessid());
 		shop.setBusinessname(business.getName());
@@ -143,9 +143,9 @@ public class BusinessController {
 		shop.setFile(file1);
 		shop.setNum(num2);
 		System.out.println(shop);
-		Business business = (Business) request.getSession().getAttribute("business");
-		shop.setBusinessid(business.getBusinessid());
-		shop.setBusinessname(business.getName());
+//		Business business = (Business) request.getSession().getAttribute("business");
+//		shop.setBusinessid(business.getBusinessid());
+//		shop.setBusinessname(business.getName());
 		
 		int res = shopService.updateShop(shop);
 		

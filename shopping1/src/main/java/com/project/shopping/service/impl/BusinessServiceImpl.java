@@ -33,4 +33,11 @@ public class BusinessServiceImpl implements BusinessService {
 		return businessMapper.updateBusiness(business);
 	}
 
+	@Override
+	public int businesZhuce(Business business) {
+		
+		return businessMapper.Busineszhuce(business);
+		
+	}
+
 }

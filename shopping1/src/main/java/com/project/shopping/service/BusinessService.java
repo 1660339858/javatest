@@ -16,4 +16,6 @@ public interface BusinessService {
 	
 	//修改商家信息
 	int updateBusiness(Business business);
+
+	int businesZhuce(Business business);
 }

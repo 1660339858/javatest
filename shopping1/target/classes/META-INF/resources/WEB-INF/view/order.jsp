@@ -19,31 +19,31 @@
 <body>
 <!-- 表单搜素 -->
 	<div class="layui-form-item">
-		<div class="layui-inline">
-			<label class="layui-form-label">教师名</label>
-			<div class="layui-input-inline" style="width: 100px;">
-				<input type="text" name="name" id="tName" autocomplete="off"
-					class="layui-input">
-			</div>
-		</div>
-		<div class="layui-inline">
-			<label class="layui-form-label">卡号</label>
-			<div class="layui-input-inline" style="width: 100px;">
-				<input type="text" name="cardNO" id="cardNo" autocomplete="off"
-					class="layui-input">
-			</div>
-		</div>
-		<div class="layui-inline">
-			<label class="layui-form-label">科室</label>
-			<div class="layui-input-inline" style="width: 100px;">
-			<select name="sectionID" id="sectionId">
-				<option value="0">请选择</option>
-					<c:forEach items="${s}" var="s">
-						<option value="${s.id}">${s.name}</option>
-					</c:forEach>
-					</select>
-			</div>
-		</div>
+<!-- 		<div class="layui-inline"> -->
+<!-- 			<label class="layui-form-label">教师名</label> -->
+<!-- 			<div class="layui-input-inline" style="width: 100px;"> -->
+<!-- 				<input type="text" name="name" id="tName" autocomplete="off" -->
+<!-- 					class="layui-input"> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+<!-- 		<div class="layui-inline"> -->
+<!-- 			<label class="layui-form-label">卡号</label> -->
+<!-- 			<div class="layui-input-inline" style="width: 100px;"> -->
+<!-- 				<input type="text" name="cardNO" id="cardNo" autocomplete="off" -->
+<!-- 					class="layui-input"> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+<!-- 		<div class="layui-inline"> -->
+<!-- 			<label class="layui-form-label">科室</label> -->
+<!-- 			<div class="layui-input-inline" style="width: 100px;"> -->
+<!-- 			<select name="sectionID" id="sectionId"> -->
+<!-- 				<option value="0">请选择</option> -->
+<%-- 					<c:forEach items="${s}" var="s"> --%>
+<%-- 						<option value="${s.id}">${s.name}</option> --%>
+<%-- 					</c:forEach> --%>
+<!-- 					</select> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
 
 		<input type="button" class="layui-btn" id="souBtn" value="搜索" />
 	</div>
@@ -61,8 +61,7 @@
 
 	<!-- 表格的行内工具条 -->
 	<script type="text/html" id="barDemo2">
-  		<a class="layui-btn layui-btn-xs" lay-event="detail">查看与编辑</a>
-  		<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+  		
 	</script>
 
 

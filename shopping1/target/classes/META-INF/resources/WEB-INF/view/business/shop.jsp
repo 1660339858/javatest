@@ -47,7 +47,7 @@
 	</script>
 
 	<!-- 表格的行内工具条 -->
-	<script type="text/html" id="barDemo2">
+	<script type="text/html" id="barDemo2">	
   		<a class="layui-btn layui-btn-xs" lay-event="detail">查看与编辑</a>
   		<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 	</script>
@@ -64,7 +64,8 @@
 			  <div class="layui-upload-list">
 			    <img class="layui-upload-img" id="demo1">
 			    <p id="demoText"></p>
-			    <input type="hidden" name="file" id="goodsimg" value="../images/defaultgoodsimg.png">
+			    <input type="hidden" name="file" id="goodsimg" value="../images/shuiguo.jpg">
+<!-- 			     <input type="hidden" name="file" id="goods" value="../images/goods/shuiguo.jpg"> -->
 			  </div>
 			</div>   
 			<div class="layui-form-item">
@@ -215,7 +216,7 @@
 					align:'center',
 					width:'200', 
 					templet:function(d){
-                    return '<img width="100px" height="100px" src=/file/showImageByPath?path='+d.file+ ' />';
+                    return '<img width="100px" height="100px" src=/layui/images/goods/'+d.file+ ' />';
                 }},{
                 	width:'300',
 					toolbar : '#barDemo2',

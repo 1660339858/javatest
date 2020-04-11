@@ -26,7 +26,7 @@
 			  <div class="layui-upload-list">
 			    <img class="layui-upload-img" id="demo1" src="/file/showImageByPath?path=${business.file}">
 			    <p id="demoText"></p>
-			    <input type="hidden" name="file" id="goodsimg" value="${business.file}">
+				 <input type="hidden" name="file" id="goodsimg" value="${business.file}">
 			  </div>
 			</div>  
 	
@@ -101,7 +101,7 @@
 			    ,done: function(res, index, upload){
 			      //预读本地文件示例，不支持ie8
 			      var path=res.path;
-			       $('#demo1').attr('src', '/file/showImageByPath?path='+path);
+			       $('#demo1').attr('src', '/layui/images/shuiguo.jpg');
 			       $("#goodsimg").val(path);//给隐藏域赋值
 			    }
 			    ,error: function(){

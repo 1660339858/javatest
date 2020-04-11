@@ -49,7 +49,13 @@ public class UserController {
 				session.setAttribute("user", user);
 				return "index";
 			}
-		}else {
+		}else if(user.getType().equals("3")){
+			user = userService.userLogin(user);
+			if(user != null) {
+				session.setAttribute("user", user);
+				return "manager/index";
+			}
+		}else{
 			Business business = new Business();
 			business.setUsername(user.getUsername());
 			business.setPassword(user.getPassword());
@@ -64,6 +70,46 @@ public class UserController {
 		return "login";
 		
 	}
+	@RequestMapping("zhuce")
+	public String userzhuce(User user,HttpServletRequest request,ModelAndView modelAndView) {
+		
+//		
+//		 HttpSession session = request.getSession(); //将用户信息存储到Session
+//		 session.setAttribute("type", user.getType());
+		
+		int res =0;
+		if(user.getType().equals("1")) {
+//			Map map=userService.selectbyUserName(user.getUsername());
+//			if(null!=map && "1".equals(map.get("code"))) {
+//				
+//				map.put("code","1");
+//				map.put("msg","用户名已存在");
+//				return map;
+//				
+//			}
+			
+			 res = userService.userzhuce(user);
+		}else {
+			Business business = new Business();
+			business.setUsername(user.getUsername());
+			business.setPassword(user.getPassword());
+			 res = businessService.businesZhuce(business);
+			
+		}
+		if(res > 0) {
+			map.put("code","0");
+			map.put("msg","添加成功");
+			return "login";
+		}else {
+			map.put("code","1");
+			map.put("msg","添加失败");
+			return "zhuce";
+		}
+		
+		
+		
+	}
+	
 	
 	@ResponseBody
 	@RequestMapping("updateUser")

@@ -17,6 +17,8 @@
 		</where>
 	</select>
 
+
+
 	<select id="userInfo" resultType="com.project.shopping.domain.User">
 		select * from pt_user
 		<where>
@@ -25,6 +27,11 @@
 			</if>
 		</where>
 	</select>
+	
+	<insert id="userzhuce">
+		insert into pt_user  (username,PASSWORD,NAME,phone,address,type,file) VALUES 
+		(#{username},#{password},#{name},#{phone},#{address},#{type},#{file})
+	</insert>
 	
 	<update id="updateUser">
 		update pt_user

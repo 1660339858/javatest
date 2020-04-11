@@ -13,7 +13,10 @@
 			</if>
 		</where>
 	</select>
-
+<insert id="Busineszhuce">
+		insert into pt_business (username,password,name,file,phone,address,avaliable) VALUES 
+		(#{username},#{password},#{name},#{phone},#{address},#{avaliable},#{file})
+	</insert>
 	<update id="updateBusiness">
 		update pt_business
 		<set>

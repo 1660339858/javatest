@@ -3,6 +3,8 @@
  */
 package com.project.shopping.service;
 
+import java.util.Map;
+
 import com.project.shopping.domain.User;
 
 /**
@@ -19,4 +21,8 @@ public interface UserService {
 		
 		//修改用户
 		int updateUser(User user);
+
+		int userzhuce(User user);
+
+		Map selectbyUserName(String username);
 }
