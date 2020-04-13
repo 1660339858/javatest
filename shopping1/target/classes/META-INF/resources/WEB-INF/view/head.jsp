@@ -20,6 +20,21 @@
   <div id="header">
 
     <!-- 最顶部 -->
+    
+<!--     	<div class="layui-form-item"> -->
+<!-- 		<form action="../business/findAllShop1" method="post"> -->
+<!-- 			<div class="layui-inline"> -->
+<!-- 				<label class="layui-form-label">商品名</label> -->
+<!-- 				<div class="layui-input-inline" style="width: 100px;"> -->
+<!-- 					<input type="text" name="name" id="tName" autocomplete="off" -->
+<%-- 						class="layui-input" value="${name}"> --%>
+<%-- 						<input type="hidden" name="count" value="${pageinfo.count}"> --%>
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 			<input type="submit" class="layui-btn" id="souBtn" value="搜索" /> -->
+<!-- 		</form> -->
+<!-- 	</div> -->
+    
     <div class="header-top">
       <div class="auto-width">
         <h1 class="logo fl"><a href="../index/#"><img  href="../index/imagesimages/logo.png" alt="#"></a></h1>
@@ -29,6 +44,7 @@
             <button class="fl search-btn">
               <i class="iconfont icon-search"></i>
             </button>
+           
           </form>
           <div class="search-feedback">
             <span class="search-hot">今日热搜</span>
@@ -111,7 +127,7 @@
                 </div>
               </div>
             </a>
-            <a href="../shopcart/addShopcart?shopid=${s.shopid}&businessid=${s.businessid}&shopname=${s.name}&shopnum=${s.num}" title="加入购物车" class="hrefa" shortcut-key="a" shortcut-label="加入购物车" shortcut-effect="click" data-spm-click="gostr=/tbdetail;locaid=d2">
+            <a href="../shopcart/addShopcart?shopid=${s.shopid}&businessid=${s.businessid}" title="加入购物车" class="hrefa" shortcut-key="a" shortcut-label="加入购物车" shortcut-effect="click" data-spm-click="gostr=/tbdetail;locaid=d2">
 	                		加入购物车   shopid ${s.shopid}    businessid${s.businessid}
 	         </a>
           </li>
@@ -123,7 +139,7 @@
 
         
         </ul>
-      </section>
+      </section>	
 
       
       

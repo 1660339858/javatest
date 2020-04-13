@@ -7,6 +7,7 @@ import java.util.List;
 
 import com.project.shopping.domain.Order;
 import com.project.shopping.domain.PtShopcart;
+import com.project.shopping.domain.Shop;
 
 /**
 * @Title: OrderService
@@ -16,6 +17,12 @@ import com.project.shopping.domain.PtShopcart;
 public interface ShopcartService {
 		
 	int addShopcart(PtShopcart ps);
-		
+
+	List<PtShopcart> selectAllShopcart(Integer userId);
+	List<PtShopcart> selectShopcartBs(Integer userId);
+
+	PtShopcart findPtShopcart(PtShopcart ps);
+
+	void updatePtShopcart(PtShopcart ps);	
 	
 }

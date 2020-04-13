@@ -1,4 +1,6 @@
 package com.project.shopping.mapper;
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 
 import com.project.shopping.domain.PtShopcart;
@@ -52,4 +54,9 @@ public interface PtShopcartMapper {
      * @mbg.generated Sun Apr 12 09:51:47 CST 2020
      */
     int updateByPrimaryKey(PtShopcart record);
+
+	List<PtShopcart> selectAllShopcart(Integer userId);
+	List<PtShopcart> selectShopcartBs(Integer userId);
+
+	PtShopcart selectByPs(PtShopcart ps);
 }

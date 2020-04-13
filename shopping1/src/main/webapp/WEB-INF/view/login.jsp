@@ -117,7 +117,7 @@
 			    </div>
 			  </div>
 
-     <a href="/gogou" class="font-set">忘记密码?</a>  <a href="/goZhuce" class="font-set">立即注册</a>
+     <a href="/goshop" class="font-set">忘记密码?</a>  <a href="/goZhuce" class="font-set">立即注册</a>
 			</div>
 		</form>
 		<script type="text/javascript" src="../layui/layui.js"></script>

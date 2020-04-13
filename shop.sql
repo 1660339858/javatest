@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 80019
 File Encoding         : 65001
 
-Date: 2020-04-13 08:05:03
+Date: 2020-04-13 23:01:26
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -101,25 +101,19 @@ CREATE TABLE `pt_shopcart` (
   `username` varchar(255) DEFAULT NULL,
   `businessname` varchar(255) DEFAULT NULL,
   `businessid` int NOT NULL,
+  `file` varchar(255) NOT NULL,
+  `price` decimal(10,2) DEFAULT NULL,
+  `place` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`ShopCartId`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of pt_shopcart
 -- ----------------------------
-INSERT INTO `pt_shopcart` VALUES ('1', '1', '', '1', '1', null, null, '1');
-INSERT INTO `pt_shopcart` VALUES ('2', '1', '1', '11', '11', '1', '1', '1');
-INSERT INTO `pt_shopcart` VALUES ('3', '4', '无公害韭黄', '223', '1', 'zs', 'ls', '1');
-INSERT INTO `pt_shopcart` VALUES ('4', '5', '冬虫夏草', '100', '1', 'zs', 'ls', '1');
-INSERT INTO `pt_shopcart` VALUES ('5', '7', '西湖龙井', '100', '1', 'zs', 'ls', '1');
-INSERT INTO `pt_shopcart` VALUES ('6', '8', '普尔红茶', '223', '1', 'zs', 'ls', '1');
-INSERT INTO `pt_shopcart` VALUES ('7', '7', '西湖龙井', '100', '1', 'zs', 'ls', '1');
-INSERT INTO `pt_shopcart` VALUES ('8', '3', '精品橘子', '132', '1', 'zs', 'ls', '1');
-INSERT INTO `pt_shopcart` VALUES ('9', '4', '无公害韭黄', '223', '1', 'zs', 'ls', '1');
-INSERT INTO `pt_shopcart` VALUES ('10', '4', '无公害韭黄', '223', '1', 'zs', 'ls', '1');
-INSERT INTO `pt_shopcart` VALUES ('11', '4', '无公害韭黄', '223', '1', 'zs', 'ls', '1');
-INSERT INTO `pt_shopcart` VALUES ('12', '3', '精品橘子', '132', '1', 'zs', 'ls', '1');
-INSERT INTO `pt_shopcart` VALUES ('13', '3', '精品橘子', '132', '1', 'zs', 'ls', '1');
+INSERT INTO `pt_shopcart` VALUES ('21', '8', '普尔红茶', '1', '1', 'zs', 'ls', '1', 'puer.jpg', '15.00', '河北');
+INSERT INTO `pt_shopcart` VALUES ('22', '3', '精品橘子', '2', '1', 'zs', 'ls', '1', 'juzi.jpg', '13.00', '北京');
+INSERT INTO `pt_shopcart` VALUES ('23', '14', '新鲜青菜', '1', '1', 'zs', 'hu', '2', 'qingcai.jpg', '12.00', '北京');
+INSERT INTO `pt_shopcart` VALUES ('24', '5', '冬虫夏草', '3', '1', 'zs', 'ls', '1', 'dongchong.jpg', '12.00', '北京');
 
 -- ----------------------------
 -- Table structure for pt_user

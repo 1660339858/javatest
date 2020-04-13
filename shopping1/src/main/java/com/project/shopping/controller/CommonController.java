@@ -11,11 +11,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.project.shopping.domain.PageInformation;
+import com.project.shopping.domain.PtShopcart;
 import com.project.shopping.domain.Shop;
+import com.project.shopping.domain.User;
 import com.project.shopping.service.ShopService;
+import com.project.shopping.service.ShopcartService;
 
 /**
 * @Title: CommonController
@@ -27,6 +29,9 @@ public class CommonController {
 	
 	@Autowired
 	ShopService shopService;
+	
+	@Autowired
+	ShopcartService shopcartService;
 	
 	@Autowired
 	//管理员
@@ -48,7 +53,17 @@ public class CommonController {
 	}
 	
 	@RequestMapping("gogou")
-	public String gogou() {
+	public String gogou(ModelMap modelAndView,HttpServletRequest request ) {
+		
+		PtShopcart ps = new PtShopcart();
+		//从缓存中拿到当前用户的信息
+		User user=	(User) request.getSession().getAttribute("user");
+		//拿到用户所有购物车信息
+		List list = shopcartService.selectAllShopcart( user.getUserid());
+		//拿到用户购物车所有商家
+		List list1 = shopcartService.selectShopcartBs( user.getUserid());
+		modelAndView.put("list",list);
+		modelAndView.put("list1",list1);
 		return "gou";
 		
 	}
@@ -60,6 +75,7 @@ public class CommonController {
 		List<Shop> list1 = shopService.selectAllShop();
 	
 		modelAndView.put("s", list1);
+		
 		return "head";
 		
 	}

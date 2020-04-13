@@ -51,17 +51,36 @@ public class ShopCartController {
 		User user =(User) request.getSession().getAttribute("user");
 		ps.setUserid(user.getUserid());
 		ps.setUsername(user.getUsername());
+		
+		//查看是否有加入过购物车
+		
+		PtShopcart dbps =shopcartService.findPtShopcart(ps);
+		
+		
 		// 从商品表拿到商品信息
-//		Shop shop =new Shop();
-//		shop.setShopid(ps.getShopid());
-//		Shop dbshop =shopService.findShopInfo(shop);
-//		ps.setShopname(dbshop.getName());
+		Shop shop =new Shop();
+		shop.setShopid(ps.getShopid());
+		Shop dbshop =shopService.findShopInfo(shop);
+		ps.setShopname(dbshop.getName());
+		ps.setFile(dbshop.getFile());
+		ps.setPlace(dbshop.getPlace());
+		ps.setPrice(dbshop.getPrice());
+		
 		//从商家表拿到商家信息
 		Business bs =new Business();
 		bs.setBusinessid(ps.getBusinessid());
 		Business dbbusiness=businesService.findBusinessInfo(bs);
 		ps.setBusinessname(dbbusiness.getUsername());
-		 shopcartService.addShopcart(ps);		
+
+		if(null!=dbps) {
+			ps.setShopcartid(dbps.getShopcartid());
+			ps.setShopnum(dbps.getShopnum()+1);
+			shopcartService.updatePtShopcart(ps);
+		}else {
+			ps.setShopnum(1);
+			shopcartService.addShopcart(ps);		
+			
+		}
 		
 		 return "redirect:/head";
 		
