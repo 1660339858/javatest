@@ -31,4 +31,6 @@ public interface ShopMapper {
 	
 	//删除商品
 	int deleteShop(Shop shop);
+
+	List<Shop> selectAllShop();
 }

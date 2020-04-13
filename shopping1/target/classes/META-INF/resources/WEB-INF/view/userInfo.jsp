@@ -16,8 +16,37 @@
 <link href="layui/css/layui.css" rel="stylesheet" type="text/css" />
 <script src="layui/layui.js"></script>
 <script src="jquery-1.8.2.js"></script>
+<link rel="stylesheet" href="../index/css/index.css">
 </head>
 <body>
+
+
+  <div class="header-nav">
+      <div class="nav-wrap auto-width clearfix">
+        <a href="../gohead" class="nav-item ">首页</a>
+        <a href="../goOrder" class="nav-item ">订单</a>
+        <a href="../gogou" class="nav-item ">购物车</a>
+        <a href="../goUserInfo" class="nav-item nav-item_hover nav-cur">个人中心</a>
+        <a href="#" class="nav-rank">
+          <i class="iconfont icon-rank"></i>
+          全站排行榜
+        </a>
+      </div>
+      <div class="subNav">
+        <ul class="auto-width">
+          <li class="subNav-item">
+            <a href="#">动画短片</a>
+            <a href="#">动画资讯</a>
+            <a href="#">旧番补档</a>
+            <a href="#">新番连载</a>
+            <a href="#">MAD·AMV</a>
+            <a href="#">MMD·3D</a>
+            <a href="#">2.5次元</a>
+            <a href="#">国产动画</a>
+          </li>
+        </ul>
+      </div>
+    </div>
 <!-- 查询表单 -->
 	<form class="layui-form" action="">
 		<div class="layui-form-item">

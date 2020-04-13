@@ -40,4 +40,10 @@ public class BusinessServiceImpl implements BusinessService {
 		
 	}
 
+	@Override
+	public Business findBusinessInfo(Business bs) {
+		// TODO Auto-generated method stub
+		return businessMapper.findBusinessInfo(bs);
+	}
+
 }

@@ -53,4 +53,10 @@ public class ShopServiceImpl implements ShopService {
 		return shopMapper.deleteShop(shop);
 	}
 
+	@Override
+	public List<Shop> selectAllShop() {
+		// TODO Auto-generated method stub
+		return shopMapper.selectAllShop();
+	}
+
 }

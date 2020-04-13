@@ -19,5 +19,7 @@ public interface BusinessMapper {
 	int updateBusiness(Business business);
 
 	int Busineszhuce(Business business);
+
+	Business findBusinessInfo(Business bs);
 	
 }

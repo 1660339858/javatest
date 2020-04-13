@@ -43,12 +43,19 @@ public class UserController {
 		
 		 HttpSession session = request.getSession(); //将用户信息存储到Session
 		 session.setAttribute("type", user.getType());
-		if(user.getType().equals("1")) {
-			user = userService.userLogin(user);
-			if(user != null) {
-				session.setAttribute("user", user);
-				return "index";
-			}
+//		if(user.getType().equals("1")) {
+//			user = userService.userLogin(user);
+//			if(user != null) {
+//				session.setAttribute("user", user);
+//				return "index";
+//			}
+		 if(user.getType().equals("1")) {
+				user = userService.userLogin(user);
+				
+				if(user != null) {
+					session.setAttribute("user", user);
+					return "redirect:/gohead";
+				}
 		}else if(user.getType().equals("3")){
 			user = userService.userLogin(user);
 			if(user != null) {

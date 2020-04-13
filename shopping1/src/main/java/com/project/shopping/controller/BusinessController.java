@@ -110,7 +110,7 @@ public class BusinessController {
 		request.getSession().setAttribute("name", shop.getName());
 		request.getSession().setAttribute("pageinfo", pageInformation);
 		modelAndView.put("s", list1);
-		return "shop";
+		return "head";
 	}
 	
 	

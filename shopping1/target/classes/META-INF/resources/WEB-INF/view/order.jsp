@@ -15,37 +15,68 @@
 <meta name="format-detection" content="telephone=no">
 <link href="layui/css/layui.css" rel="stylesheet" type="text/css" />
 <script src="layui/layui.js"></script>
+<link rel="stylesheet" href="../index/css/index.css">
 </head>
 <body>
+
+
+  <div class="header-nav">
+      <div class="nav-wrap auto-width clearfix">
+        <a href="../gohead" class="nav-item ">首页</a>
+        <a href="../goOrder" class="nav-item  nav-cur">订单</a>
+        <a href="../gogou" class="nav-item">购物车</a>
+        <a href="../goUserInfo" class="nav-item nav-item_hover">个人中心</a>
+        <a href="#" class="nav-rank">
+          <i class="iconfont icon-rank"></i>
+          全站排行榜
+        </a>
+      </div>
+      <div class="subNav">
+        <ul class="auto-width">
+          <li class="subNav-item">
+            <a href="#">动画短片</a>
+            <a href="#">动画资讯</a>
+            <a href="#">旧番补档</a>
+            <a href="#">新番连载</a>
+            <a href="#">MAD·AMV</a>
+            <a href="#">MMD·3D</a>
+            <a href="#">2.5次元</a>
+            <a href="#">国产动画</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
 <!-- 表单搜素 -->
 	<div class="layui-form-item">
-<!-- 		<div class="layui-inline"> -->
-<!-- 			<label class="layui-form-label">教师名</label> -->
-<!-- 			<div class="layui-input-inline" style="width: 100px;"> -->
-<!-- 				<input type="text" name="name" id="tName" autocomplete="off" -->
-<!-- 					class="layui-input"> -->
-<!-- 			</div> -->
-<!-- 		</div> -->
-<!-- 		<div class="layui-inline"> -->
-<!-- 			<label class="layui-form-label">卡号</label> -->
-<!-- 			<div class="layui-input-inline" style="width: 100px;"> -->
-<!-- 				<input type="text" name="cardNO" id="cardNo" autocomplete="off" -->
-<!-- 					class="layui-input"> -->
-<!-- 			</div> -->
-<!-- 		</div> -->
-<!-- 		<div class="layui-inline"> -->
-<!-- 			<label class="layui-form-label">科室</label> -->
-<!-- 			<div class="layui-input-inline" style="width: 100px;"> -->
-<!-- 			<select name="sectionID" id="sectionId"> -->
-<!-- 				<option value="0">请选择</option> -->
-<%-- 					<c:forEach items="${s}" var="s"> --%>
-<%-- 						<option value="${s.id}">${s.name}</option> --%>
-<%-- 					</c:forEach> --%>
-<!-- 					</select> -->
-<!-- 			</div> -->
-<!-- 		</div> -->
+		<div class="layui-inline">
+			<label class="layui-form-label">教师名</label>
+			<div class="layui-input-inline" style="width: 100px;">
+				<input type="text" name="name" id="tName" autocomplete="off"
+					class="layui-input">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label">卡号</label>
+			<div class="layui-input-inline" style="width: 100px;">
+				<input type="text" name="cardNO" id="cardNo" autocomplete="off"
+					class="layui-input">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label">科室</label>
+			<div class="layui-input-inline" style="width: 100px;">
+			<select name="sectionID" id="sectionId">
+				<option value="0">请选择</option>
+					<c:forEach items="${s}" var="s">
+						<option value="${s.id}">${s.name}</option>
+					</c:forEach>
+					</select>
+			</div>
+		</div>
 
 		<input type="button" class="layui-btn" id="souBtn" value="搜索" />
+		<a type="button" class="layui-btn" id="souBtn" href="../gohead" >返回首页</a>
 	</div>
 
 

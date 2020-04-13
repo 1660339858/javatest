@@ -116,7 +116,8 @@
 			      <button class="layui-btn" lay-submit lay-filter="formDemo">登陆</button>	     
 			    </div>
 			  </div>
-    <a href="" class="font-set">忘记密码?</a>  <a href="/goZhuce" class="font-set">立即注册</a>
+
+     <a href="/gogou" class="font-set">忘记密码?</a>  <a href="/goZhuce" class="font-set">立即注册</a>
 			</div>
 		</form>
 		<script type="text/javascript" src="../layui/layui.js"></script>

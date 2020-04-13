@@ -31,6 +31,10 @@
 			</if>
 	</select>
 	
+	<select id="selectAllShop" resultType="com.project.shopping.domain.Shop">
+		select * from pt_shop
+	</select>
+	
 	<select id="findShopInfo" resultType="com.project.shopping.domain.Shop">
 		select * from pt_shop
 		<where>

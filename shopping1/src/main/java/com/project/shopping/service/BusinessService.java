@@ -18,4 +18,6 @@ public interface BusinessService {
 	int updateBusiness(Business business);
 
 	int businesZhuce(Business business);
+
+	Business findBusinessInfo(Business bs);
 }

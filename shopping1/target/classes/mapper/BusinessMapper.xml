@@ -13,6 +13,15 @@
 			</if>
 		</where>
 	</select>
+
+	<select id="findBusinessInfo" resultType="com.project.shopping.domain.Business">
+		select * from pt_business
+		<where>
+			<if test="businessid != 0">
+				businessid = #{businessid}
+			</if>
+		</where>
+	</select>
 <insert id="Busineszhuce">
 		insert into pt_business (username,password,name,file,phone,address,avaliable) VALUES 
 		(#{username},#{password},#{name},#{phone},#{address},#{avaliable},#{file})

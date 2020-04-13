@@ -47,6 +47,23 @@ public class CommonController {
 		return "zhuce";
 	}
 	
+	@RequestMapping("gogou")
+	public String gogou() {
+		return "gou";
+		
+	}
+	
+	@RequestMapping("gohead")
+	public String gohead(ModelMap modelAndView,HttpServletRequest request) {
+		
+		//拿到全部商品
+		List<Shop> list1 = shopService.selectAllShop();
+	
+		modelAndView.put("s", list1);
+		return "head";
+		
+	}
+	
 	@RequestMapping("/")
 	public String goLoginCView() {
 		return "login";
