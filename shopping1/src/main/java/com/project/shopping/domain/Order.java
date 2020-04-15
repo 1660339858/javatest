@@ -92,6 +92,23 @@ public class Order {
 	public void setShopname(String shopname) {
 		this.shopname = shopname;
 	}
+	private Shop shop;
+	private Business business;
+
+
+	public Shop getShop() {
+		return shop;
+	}
+	public void setShop(Shop shop) {
+		this.shop = shop;
+	}
+	public Business getBusiness() {
+		return business;
+	}
+	public void setBusiness(Business business) {
+		this.business = business;
+	}
+	
 	
 	
 }

@@ -38,7 +38,7 @@
 
 
 	<!-- 表格容器 -->
-	<table id="demo" lay-filter="test"></table>
+<table id="demo" lay-filter="test"></table>
 
 
 	<!-- 表格的头部工具条 -->

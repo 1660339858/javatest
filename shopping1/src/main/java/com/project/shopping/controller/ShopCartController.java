@@ -33,6 +33,7 @@ import com.project.shopping.util.Result;
 */
 @RequestMapping("shopcart")
 @Controller
+
 public class ShopCartController {
 
 	@Autowired
@@ -42,7 +43,12 @@ public class ShopCartController {
 	@Autowired
 	BusinessService businesService;
 	
-
+	@RequestMapping("delshopcart")
+	public String delshopcart(int shopcartid,HttpServletRequest request,ModelAndView modelAndView) {
+//		String i=request.getParameter("shopcartid");
+		shopcartService.deleteByPrimaryKey(shopcartid);
+		return "redirect:/gogou";
+	}
 	
 	@ResponseBody
 	@RequestMapping("addShopcart")

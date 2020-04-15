@@ -46,7 +46,7 @@
 	</update>
 	
 	<insert id="addOrder">
-		insert into pt_order(userid,shopid,businessid,num.price,orderstatus,createtime)
+		insert into pt_order(userid,shopid,businessid,num,price,orderstatus,createtime)
 		values(#{userid},#{shopid},#{businessid},#{num},#{price},#{orderstatus},NOW())
 	</insert>
 	

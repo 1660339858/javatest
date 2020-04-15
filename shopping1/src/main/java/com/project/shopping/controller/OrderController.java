@@ -13,15 +13,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.project.shopping.domain.Business;
 import com.project.shopping.domain.Order;
+import com.project.shopping.domain.PtShopcart;
 import com.project.shopping.domain.Shop;
 import com.project.shopping.domain.User;
 import com.project.shopping.service.OrderService;
 import com.project.shopping.service.ShopService;
+import com.project.shopping.service.ShopcartService;
 import com.project.shopping.util.Result;
+
 
 /**
 * @Title: OrderController
@@ -37,6 +41,30 @@ public class OrderController {
 	
 	@Autowired
 	ShopService shopService;
+	@Autowired
+	ShopcartService shopcartService;
+	
+	@RequestMapping("addorder")
+	public String addorder(PtShopcart shopcart,HttpServletRequest request,ModelAndView modelAndView) {
+//		
+//		String res=request.getParameter("shopcart");
+//		
+//		JSONObject jsonObject = JSONObject.parseObject(res);
+		//加订单
+		User user = (User) request.getSession().getAttribute("user");
+		Order order =new Order();
+		order.setUserid(user.getUserid());
+		order.setBusinessid(shopcart.getBusinessid());
+		order.setShopid(shopcart.getShopid());
+		order.setNum(shopcart.getShopnum());
+		order.setPrice(shopcart.getPrice());
+		order.setOrderstatus((shopcart.getShopnum()*shopcart.getPrice().intValue())+"");
+		orderService.addOrder(order );
+		//删购物车
+		shopcartService.deleteByPrimaryKey(shopcart.getShopcartid());
+		
+		return "redirect:/gogou";
+	}
 	
 	@ResponseBody
 	@RequestMapping("findAllOrder")
@@ -54,7 +82,7 @@ public class OrderController {
 			nameString = business.getName();
 		}
 		
-		
+	
 		
 		System.out.println(order);
 		

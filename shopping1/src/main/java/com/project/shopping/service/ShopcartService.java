@@ -23,6 +23,9 @@ public interface ShopcartService {
 
 	PtShopcart findPtShopcart(PtShopcart ps);
 
-	void updatePtShopcart(PtShopcart ps);	
+	void updatePtShopcart(PtShopcart ps);
 	
+//	int deleteByPrimaryKey(int shopcartid);
+
+	void deleteByPrimaryKey(Integer shopcartid);  
 }

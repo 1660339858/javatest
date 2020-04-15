@@ -24,7 +24,7 @@
 		<div class="layui-upload">
 			  <button type="button" class="layui-btn" id="test1">上传图片</button>
 			  <div class="layui-upload-list">
-			    <img class="layui-upload-img" id="demo1" src="/file/showImageByPath?path=${business.file}">
+			    <img class="layui-upload-img" id="demo1" src="../file/showImageByPath?path=${business.file}">
 			    <p id="demoText"></p>
 				 <input type="hidden" name="file" id="goodsimg" value="${business.file}">
 			  </div>
@@ -46,13 +46,13 @@
 					value="${business.username}" placeholder="请输入用户名" autocomplete="off" class="layui-input">
 				</div>
 			</div>
-		<div class="layui-form-item">
-				<label class="layui-form-label">密码</label>
-				<div class="layui-input-inline">
-					<input type="text" name="password" id="password" required lay-verify="required"
-					value="${business.password}" placeholder="请输入密码" autocomplete="off" class="layui-input">
-				</div>
-			</div>
+<!-- 		<div class="layui-form-item"> -->
+<!-- 				<label class="layui-form-label">密码</label> -->
+<!-- 				<div class="layui-input-inline"> -->
+<!-- 					<input type="text" name="password" id="password" required lay-verify="required" -->
+<%-- 					value="${business.password}" placeholder="请输入密码" autocomplete="off" class="layui-input"> --%>
+<!-- 				</div> -->
+<!-- 			</div> -->
 		<div class="layui-form-item">
 			<label class="layui-form-label">电话</label>
 			<div class="layui-input-inline">

@@ -6,6 +6,10 @@ html,body{
 input[type="checkbox"]{
     display: none;
 }
+.sub{
+	margin: 20px;
+}
+
 label{
     position: relative;
     display: inline-block;

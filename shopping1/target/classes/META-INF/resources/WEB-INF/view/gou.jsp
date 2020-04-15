@@ -68,10 +68,10 @@
 
   <div class="cartBox">
             <div class="shop_info">
-                <div class="all_check">
+                <div class="all_check" style="display:none">
                     <!--店铺全选-->
                     <input type="checkbox" id="shop_a" class="shopChoice">
-                    <label for="shop_a" class="shop"></label>
+                    <label for="shop_a" class="shop" ></label>
                 </div>
                 <div class="shop_name">
                     店铺：<a href="javascript:;"> ${list1.businessname}</a>
@@ -83,9 +83,9 @@
    <c:when test="${list1.businessid==list.businessid}"> 
    <div class="order_content">
                 <ul class="order_lists">
-                    <li class="list_chk">
-                        <input type="checkbox" id="checkbox_2" class="son_check">
-                        <label for="checkbox_2"></label>
+                    <li class="list_chk" >
+                        <input type="checkbox" id="checkbox_2" class="son_check"  style="display:none">
+                        <label for="checkbox_2" style="display:none"></label>
                     </li>
                     <li class="list_con">
                         <div class="list_img"><a href="javascript:;"><img src="../images/${list.file} " alt=""></a></div>
@@ -109,8 +109,12 @@
                         <p class="sum_price">￥${list.shopnum * list.price}</p>
                     </li>
                     <li class="list_op">
-                        <p class="del"><a href="javascript:;" class="delBtn">移除商品</a></p>
+                        <p class="del"><a href="../shopcart/delshopcart?shopcartid=${list.shopcartid}" class="delBtn">移除商品</a></p>
+                        <p class="del"><a href="../order/addorder?businessid=${list.businessid}&shopid=${list.shopid}&price=${list.price}&shopnum=${list.shopnum}&shopcartid=${list.shopcartid}" class="delBtn">结算商品</a></p>
+<!--                         <input type="submit" name="Submit" value="删除" style="width:80" οnclick="javascript:delcfm()"   class="sub"> -->
+<!--                         <input type="submit" name="Submit" value="结算" style="width:80" οnclick="javascript:delcfm()"  class="sub"> -->
                     </li>
+
                 </ul>
                
             </div>
@@ -133,13 +137,25 @@
             </div>
         </div>
     </section>
-    <section class="model_bg"></section>
-    <section class="my_model">
-        <p class="title">删除宝贝<span class="closeModel">X</span></p>
-        <p>您确认要删除该宝贝吗？</p>
-        <div class="opBtn"><a href="javascript:;" class="dialog-sure">确定</a><a href="javascript:;" class="dialog-close">关闭</a></div>
-    </section>
+<!--     <section class="model_bg"></section> -->
+<!--     <section class="my_model"> -->
+<!--         <p class="title">删除宝贝<span class="closeModel">X</span></p> -->
+<!--         <p>您确认要删除该宝贝吗？</p> -->
+<!--         <div class="opBtn"><a href="javascript:;" class="dialog-sure">确定</a><a href="javascript:;" class="dialog-close">关闭</a></div> -->
+<!--     </section> -->
+
+
     <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
     <script src="./js/carts.js"></script>
+<script language="javascript">
+    function delcfm() {
+    	alert(00001);
+        if (confirm("确认要删除？")) { window.event.returnValue = true}else{
+        	
+        
+            window.event.returnValue = false;
+        }
+    }
+</script>
 </body>
 </html>

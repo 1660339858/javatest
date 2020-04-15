@@ -179,7 +179,27 @@ $(function () {
 
     var $order_lists = null;
     var $order_content = '';
-    $('.delBtn').click(function () {
+    $('.delBtn').click(function (data) {
+//    	console.log(data);
+    	
+//    	$.ajax({
+//            url:'../shopcart/delshopcart',
+//            type:'post',
+//            data:{'ID':data.id,'memthodname':"delete"},//向服务端发送删除的id
+//            dataType: "json",
+//            
+//            success:function(data){
+//                if(data.state==1){
+//               	 obj.del(); //删除对应行（tr）的DOM结构，并更新缓存
+//                    layer.close(index);
+//                    console.log(index);
+//                  
+//                    layer.msg("删除成功",{icon: 6});   
+//                }
+//            }
+//    	});
+
+    	
         $order_lists = $(this).parents('.order_lists');
         $order_content = $order_lists.parents('.order_content');
         $('.model_bg').fadeIn(300);

@@ -50,21 +50,21 @@
 <!-- 表单搜素 -->
 	<div class="layui-form-item">
 		<div class="layui-inline">
-			<label class="layui-form-label">教师名</label>
+			<label class="layui-form-label">商品名</label>
 			<div class="layui-input-inline" style="width: 100px;">
 				<input type="text" name="name" id="tName" autocomplete="off"
 					class="layui-input">
 			</div>
 		</div>
 		<div class="layui-inline">
-			<label class="layui-form-label">卡号</label>
-			<div class="layui-input-inline" style="width: 100px;">
+			<label class="layui-form-label">价格</label>
+			<div class="layui-input-inline" style="width: 100px;">	
 				<input type="text" name="cardNO" id="cardNo" autocomplete="off"
 					class="layui-input">
 			</div>
 		</div>
 		<div class="layui-inline">
-			<label class="layui-form-label">科室</label>
+			<label class="layui-form-label">数量</label>
 			<div class="layui-input-inline" style="width: 100px;">
 			<select name="sectionID" id="sectionId">
 				<option value="0">请选择</option>
@@ -213,32 +213,33 @@
 					width : 80
 				}, {
 					field : 'cardNO',
-					title : '卡号',
+					title : '商品id',
 					width : 120
 				}, {
 					field : 'name',
-					title : '姓名',
+					title : '商品名称',
 					width : 120
 				}, {
 					field : 'sex',
-					title : '性别',
+					title : '价格',
 					width : 120
 				}, {
 					field : 'sectionID',
-					title : '科室',
-					width : 120
-				}, {
-					field : 'status',
-					title : '状态',
-					width : 120
-				}, {
-					field : 'sectionName',
-					title : '科室',
-					width : 120
-				}, {
-					toolbar : '#barDemo2',
-					title : '操作'
-				} ] ]
+// 					title : '产地',
+// 					width : 120
+// 				}, {
+// 					field : 'status',
+// 					title : '状态',
+// 					width : 120
+// 				}, {
+// 					field : 'sectionName',
+// 					title : '科室',
+// 					width : 120
+// 				}, {
+// 					toolbar : '#barDemo2',
+// 					title : '操作'
+// 				} 
+] ]
 			});
 			//渲染表格--end
 

@@ -55,4 +55,16 @@ public class ShopcartServiceImpl implements ShopcartService {
 	}
 
 
+	@Override
+	public void deleteByPrimaryKey(Integer shopcartid) {
+		shopcartMapper.deleteByPrimaryKey(shopcartid);
+	
+	}
+
+//	@Override
+//	public int deleteByPrimaryKey(int shopcartid) {
+//		// TODO Auto-generated method stub
+//		return 0;
+//	}
+
 }
