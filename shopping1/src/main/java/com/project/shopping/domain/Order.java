@@ -24,8 +24,15 @@ public class Order {
 	private String businessname;
 	private String username;
 	private String shopname;
+	private String file;
 	
 	
+	public String getFile() {
+		return file;
+	}
+	public void setFile(String file) {
+		this.file = file;
+	}
 	public int getBusinessid() {
 		return businessid;
 	}

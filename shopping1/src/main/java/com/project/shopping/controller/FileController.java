@@ -56,7 +56,7 @@ public class FileController {
             dirFile.mkdirs();//创建文件夹
         }
         //6,构造文件对象
-        File file=new File(dirFile, newName+"_temp");
+        File file=new File(dirFile, newName);
         //7,把mf里面的图片信息写入file
         try {
             mf.transferTo(file);
@@ -78,15 +78,15 @@ public class FileController {
         //2,根据文件名生成新的文件名
         String newName=AppFileUtils.createNewFileName(oldName);
         //3,得到当前日期的字符串
-        String dirName=DateUtil.format(new Date(), "yyyy-MM-dd");
+//        String dirName=DateUtil.format(new Date(), "yyyy-MM-dd");
         //4,构造文件夹
-        File dirFile=new File(AppFileUtils.UPLOAD_PATH,dirName);
-        //5,判断当前文件夹是否存在
-        if(!dirFile.exists()) {
-            dirFile.mkdirs();//创建文件夹
-        }
+//        File dirFile=new File(AppFileUtils.UPLOAD_PATH,dirName);
+//        //5,判断当前文件夹是否存在
+//        if(!dirFile.exists()) {
+//            dirFile.mkdirs();//创建文件夹
+//        }
         //6,构造文件对象
-        File file=new File(dirFile, newName+"_temp");
+        File file=new File("H:/eclipse/longlongago/shopping1/src/main/resources/static/layui/images/goods", newName);
         //7,把mf里面的图片信息写入file
         try {
             mf.transferTo(file);
@@ -94,7 +94,7 @@ public class FileController {
             e.printStackTrace();
         }
         Map<String,Object> map=new HashMap<String, Object>();
-        map.put("path", dirName+"/"+newName+"_temp");
+        map.put("path",newName);
         return map;
     }
 

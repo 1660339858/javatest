@@ -75,7 +75,7 @@
     <div class="header-nav">
       <div class="nav-wrap auto-width clearfix">
         <a href="#" class="nav-item nav-cur">首页</a>
-        <a href="../goOrder" class="nav-item">订单</a>
+        <a href="../goorder" class="nav-item">订单</a>
         <a href="../gogou	" class="nav-item">购物车</a>
         <a href="../goUserInfo" class="nav-item nav-item_hover">个人中心</a>
         <a href="#" class="nav-rank">
@@ -112,7 +112,7 @@
         
          <c:forEach items="${s}" var="s">
          <li class="slider-menu__item">
-            <a href="info" class="item">
+            <a href="#" class="item">
              <img class="img"  src="../layui/images/goods/${s.file}"/><br>
               <div class="mask-gradient">
                 <p><strong class="price">¥${s.price}</strong><br>

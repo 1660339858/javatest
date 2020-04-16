@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 80019
 File Encoding         : 65001
 
-Date: 2020-04-15 08:39:33
+Date: 2020-04-16 09:45:05
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -34,7 +34,7 @@ CREATE TABLE `pt_business` (
 -- ----------------------------
 -- Records of pt_business
 -- ----------------------------
-INSERT INTO `pt_business` VALUES ('1', 'ls', 'ls', '生鲜大佬', 'shuiguo.jpg', '12342321323', '河南', '2');
+INSERT INTO `pt_business` VALUES ('1', 'ls', 'ls', '生鲜大佬', '4D83E07D18DC4223B658247B52FA0804.jpg', '12342321323', '河南', '1');
 INSERT INTO `pt_business` VALUES ('2', 'hu', 'hu', '生鲜', null, null, 'qqq', null);
 
 -- ----------------------------
@@ -51,7 +51,7 @@ CREATE TABLE `pt_order` (
   `orderstatus` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `createtime` datetime DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 -- Records of pt_order
@@ -60,6 +60,10 @@ INSERT INTO `pt_order` VALUES ('1', '1', '3', '1', '1', '12.00', '1', '2020-04-0
 INSERT INTO `pt_order` VALUES ('2', '1', '4', '1', '1', '12.00', '2', '2020-04-09 16:21:13');
 INSERT INTO `pt_order` VALUES ('3', '1', '5', '1', '3', '12.00', '36', '2020-04-14 22:49:00');
 INSERT INTO `pt_order` VALUES ('4', '1', '9', '1', '1', '12.00', '12', '2020-04-14 23:14:19');
+INSERT INTO `pt_order` VALUES ('5', '1', '4', '1', '1', '15.00', '15', '2020-04-15 09:40:05');
+INSERT INTO `pt_order` VALUES ('6', '1', '7', '1', '1', '12.00', '12', '2020-04-15 09:40:08');
+INSERT INTO `pt_order` VALUES ('7', '1', '10', '1', '1', '15.00', '15', '2020-04-15 12:05:08');
+INSERT INTO `pt_order` VALUES ('8', '1', '4', '1', '1', '15.00', '15', '2020-04-15 16:45:10');
 
 -- ----------------------------
 -- Table structure for pt_shop
@@ -107,13 +111,13 @@ CREATE TABLE `pt_shopcart` (
   `price` decimal(10,2) DEFAULT NULL,
   `place` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`ShopCartId`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of pt_shopcart
 -- ----------------------------
-INSERT INTO `pt_shopcart` VALUES ('23', '14', '新鲜青菜', '1', '1', 'zs', 'hu', '2', 'qingcai.jpg', '12.00', '北京');
-INSERT INTO `pt_shopcart` VALUES ('24', '5', '冬虫夏草', '3', '1', 'zs', 'ls', '1', 'dongchong.jpg', '12.00', '北京');
+INSERT INTO `pt_shopcart` VALUES ('36', '5', '冬虫夏草', '1', '1', 'zs', 'ls', '1', 'dongchong.jpg', '12.00', '北京');
+INSERT INTO `pt_shopcart` VALUES ('37', '7', '西湖龙井', '1', '1', 'zs', 'ls', '1', 'longjing.jpg', '12.00', '北京');
 
 -- ----------------------------
 -- Table structure for pt_user

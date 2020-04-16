@@ -12,11 +12,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.project.shopping.domain.Business;
 import com.project.shopping.domain.Order;
 import com.project.shopping.domain.PageInformation;
 import com.project.shopping.domain.PtShopcart;
 import com.project.shopping.domain.Shop;
 import com.project.shopping.domain.User;
+import com.project.shopping.service.BusinessService;
 import com.project.shopping.service.OrderService;
 import com.project.shopping.service.ShopService;
 import com.project.shopping.service.ShopcartService;
@@ -33,7 +35,8 @@ public class CommonController {
 	OrderService orderService;
 	@Autowired
 	ShopService shopService;
-	
+	@Autowired
+	BusinessService businessService;
 	@Autowired
 	ShopcartService shopcartService;
 	
@@ -102,7 +105,7 @@ public class CommonController {
 		return "login";
 	}
 	
-	@RequestMapping("goOrder")
+	@RequestMapping("goorder")
 	public String goOrder(ModelMap modelAndView,HttpServletRequest request) {
 		//查出所有订单信息
 		
@@ -117,16 +120,20 @@ public class CommonController {
 			Shop shop =new Shop();
 			shop.setShopid(or.getShopid());
 			Shop dbshop =shopService.findShopInfo(shop);
-			or.setShop(shop);
+			or.setShopname(dbshop.getName());
+			or.setFile(dbshop.getFile());
 			
 			//通过定单中的商家Id 查到此商家的所有信息并放入 order的对象中
+			
+			Business business =new Business();
+			business.setBusinessid(or.getBusinessid());
+			Business dbbusiness = businessService.findBusinessInfo(business);
+			or.setBusinessname(dbbusiness.getUsername());
+			
+			
 		}
-		
-		
-		modelAndView.put("s", list); //返回list到jsp页面
-		
-		
-		
+		modelAndView.put("list", list); //返回list到jsp页面
+		System.out.println(list);
 		return "order";
 	}
 	

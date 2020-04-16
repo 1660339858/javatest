@@ -3,7 +3,9 @@
  */
 package com.project.shopping.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -13,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.JSON;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.project.shopping.domain.Business;
@@ -67,9 +69,32 @@ public class OrderController {
 	}
 	
 	@ResponseBody
+	@RequestMapping("findOrders")
+	public Object findOrders(HttpServletRequest request) {
+        Map<String, Object> map = new HashMap<String, Object>();
+//       
+//        String nameString = "";
+//		int type = Integer.parseInt((String) request.getSession().getAttribute("type"));
+//		if(type == 1) {
+//			User user = (User) request.getSession().getAttribute("user");
+//			nameString = user.getName();
+//			order.setUserid(user.getUserid());
+//		}else {
+//			Business business = (Business) request.getSession().getAttribute("business");
+//			order.setBusinessid(business.getBusinessid());
+//			nameString = business.getName();
+//		}
+//        orderService.findOrders();
+//        System.out.println(map);
+
+        return JSON.toJSON(map);
+		
+	}
+	@ResponseBody
 	@RequestMapping("findAllOrder")
 	public Object findAllOrder(Order order,int page, int limit,ModelAndView modelAndView,HttpServletRequest request) {
-		
+		page=1;
+				limit=10;
 		String nameString = "";
 		int type = Integer.parseInt((String) request.getSession().getAttribute("type"));
 		if(type == 1) {
@@ -82,7 +107,7 @@ public class OrderController {
 			nameString = business.getName();
 		}
 		
-	
+		
 		
 		System.out.println(order);
 		

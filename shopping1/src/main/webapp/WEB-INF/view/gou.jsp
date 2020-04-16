@@ -21,7 +21,7 @@
   <div class="header-nav">
       <div class="nav-wrap auto-width clearfix">
         <a href="../gohead" class="nav-item ">首页</a>
-        <a href="../goOrder" class="nav-item ">订单</a>
+        <a href="../goorder" class="nav-item ">订单</a>
         <a href="../gogou" class="nav-item nav-cur">购物车</a>
         <a href="../goUserInfo" class="nav-item nav-item_hover">个人中心</a>
         <a href="#" class="nav-rank">
@@ -109,6 +109,7 @@
                         <p class="sum_price">￥${list.shopnum * list.price}</p>
                     </li>
                     <li class="list_op">
+                         <a href="javascript:mydel(${list.shopcartid})">删除</a>
                         <p class="del"><a href="../shopcart/delshopcart?shopcartid=${list.shopcartid}" class="delBtn">移除商品</a></p>
                         <p class="del"><a href="../order/addorder?businessid=${list.businessid}&shopid=${list.shopid}&price=${list.price}&shopnum=${list.shopnum}&shopcartid=${list.shopcartid}" class="delBtn">结算商品</a></p>
 <!--                         <input type="submit" name="Submit" value="删除" style="width:80" οnclick="javascript:delcfm()"   class="sub"> -->
@@ -148,6 +149,30 @@
     <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
     <script src="./js/carts.js"></script>
 <script language="javascript">
+function  mydel(id) {
+   if(confirm("你确定要删除吗?")){
+        $.ajax({
+            url:"../shopcart/delshopcart?shopcartid="+id,
+            type:"POST",
+            data:{"_method":"POST"},
+            dataType:"json",
+            success:function (data) {
+            	console.log(date);
+               window.location.href=data.obj;
+            }
+        });
+   }
+//    $('.dialog-sure').click(function () {
+//        $order_lists.remove();
+//        if($order_content.html().trim() == null || $order_content.html().trim().length == 0){
+//            $order_content.parents('.cartBox').remove();
+//        }
+//        closeM();
+//        $sonCheckBox = $('.son_check');
+//        totalMoney();
+//    })
+}
+
     function delcfm() {
     	alert(00001);
         if (confirm("确认要删除？")) { window.event.returnValue = true}else{

@@ -24,9 +24,10 @@
 		<div class="layui-upload">
 			  <button type="button" class="layui-btn" id="test1">上传图片</button>
 			  <div class="layui-upload-list">
-			    <img class="layui-upload-img" id="demo1" src="../file/showImageByPath?path=${business.file}">
+			    <img class="layui-upload-img" id="demo1" src="../layui/images/goods/${business.file}">
+<!-- 			    <img class="layui-upload-img" id="demo1" src="../layui/images/goods/2020-04-15/257156A494024ED7954D953A37AA256B.jpg"> -->
 			    <p id="demoText"></p>
-				 <input type="hidden" name="file" id="goodsimg" value="${business.file}">
+			    <input type="hidden" name="file" id="goodsimg" value="${business.file}">
 			  </div>
 			</div>  
 	
@@ -46,13 +47,13 @@
 					value="${business.username}" placeholder="请输入用户名" autocomplete="off" class="layui-input">
 				</div>
 			</div>
-<!-- 		<div class="layui-form-item"> -->
-<!-- 				<label class="layui-form-label">密码</label> -->
-<!-- 				<div class="layui-input-inline"> -->
-<!-- 					<input type="text" name="password" id="password" required lay-verify="required" -->
-<%-- 					value="${business.password}" placeholder="请输入密码" autocomplete="off" class="layui-input"> --%>
-<!-- 				</div> -->
-<!-- 			</div> -->
+		<div class="layui-form-item">
+				<label class="layui-form-label">密码</label>
+				<div class="layui-input-inline">
+					<input type="text" name="password" id="password" required lay-verify="required"
+					value="${business.password}" placeholder="请输入密码" autocomplete="off" class="layui-input">
+				</div>
+			</div>
 		<div class="layui-form-item">
 			<label class="layui-form-label">电话</label>
 			<div class="layui-input-inline">
@@ -101,7 +102,7 @@
 			    ,done: function(res, index, upload){
 			      //预读本地文件示例，不支持ie8
 			      var path=res.path;
-			       $('#demo1').attr('src', '/layui/images/shuiguo.jpg');
+			       $('#demo1').attr('src', '../layui/images/goods/'+path);
 			       $("#goodsimg").val(path);//给隐藏域赋值
 			    }
 			    ,error: function(){
