@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.shopping.mapper.TalkMapper">
+
+	<select id="findShoptalk" resultType="com.project.shopping.domain.Talk">
+		select * from pt_talk 
+		<where>
+			<if test="shopid != null and shopid != 0">
+				shopid = #{shopid}
+			</if>
+			<if test="userid != null and userid != 0">
+				userid = #{userid}
+			</if>
+			<if test="businessid != null and businessid != 0">
+				businessid = #{businessid}
+			</if>
+		
+		</where>
+	</select>
+
+		<insert id="addtalk" parameterType="com.project.shopping.domain.Talk">
+		insert into pt_talk(content,userid,shopid,businessid,creatdate)
+VALUES(#{content},#{userid},#{shopid},#{businessid},now());
+	</insert>
+
+</mapper>
